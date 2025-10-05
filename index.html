@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zenquiz Clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>Zenquiz</h1>
+        <p class="subtitle">Test je kennis en bereik de zen-modus.</p>
+      </header>
+
+      <main class="game" aria-live="polite">
+        <section class="status-bar">
+          <div class="score" id="score">Score: 0</div>
+          <div class="progress">
+            <span id="questionIndex">Vraag 1</span>
+            <div class="progress-bar">
+              <div class="progress-bar__fill" id="progressFill"></div>
+            </div>
+          </div>
+          <button class="reset" id="resetButton" type="button">Opnieuw</button>
+        </section>
+
+        <section class="card" id="questionCard">
+          <h2 class="card__title" id="questionText">Laden...</h2>
+          <ul class="answers" id="answers"></ul>
+          <div class="feedback" id="feedback" role="alert"></div>
+          <button class="next" id="nextButton" type="button" disabled>
+            Volgende vraag
+          </button>
+        </section>
+
+        <section class="result hidden" id="resultScreen">
+          <h2>Gefeliciteerd!</h2>
+          <p id="resultMessage"></p>
+          <button class="reset" id="playAgain" type="button">Speel opnieuw</button>
+        </section>
+      </main>
+    </div>
+
+    <template id="answerTemplate">
+      <li>
+        <button type="button" class="answer-button"></button>
+      </li>
+    </template>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
